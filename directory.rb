@@ -1,22 +1,33 @@
-# lets put all the students in an array
+# Let's put all the students in an array
 students = [ 
-    "Dr. Hannibal Lecter",
-    "Darth Vader",
-    "Nurse Ratched",
-    "Michael Corleone",
-    "Alex Delarge",
-    "The Wicked Witch of the West",
-    "Terminator",
-    "Freddy Krueger",
-    "The Joker",
-    "Joffrey Baratheon",
-    "Norman Bates"
-    ]
+    {name: "Dr. Hannibal Lecter", cohort: :november},
+    {name: "Darth Vader", cohort: :november},
+    {name: "Nurse Ratched", cohort: :november},
+    {name: "Michael Corleone", cohort: :november},
+    {name: "Alex Delarge", cohort: :november},
+    {name: "The Wicked Witch of the West", cohort: :november},
+    {name: "Terminator", cohort: :november},
+    {name: "Freddy Krueger", cohort: :november},
+    {name: "The Joker", cohort: :november},
+    {name: "Joffrey Baratheon", cohort: :november},
+    {name: "Norman Bates", cohort: :november},
+]
+def print_header
+    puts "The students of Villains Academy"
+    puts "------------"
+end 
 
-# and then print them
-puts "The students of Villains Academy"
-puts "------------"
-students.each { |student| puts student}
+def print(students)
+    students.each do |student| 
+        puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    end 
+end 
 
-# finally, we print the total
-puts "Overall we have #{students.count} great students"
+def print_footer(students)
+    puts "Overall we have #{students.count} great students"
+end 
+
+# nothing will happen till we call the methods
+print_header
+print(students)
+print_footer(students)
