@@ -84,7 +84,6 @@ def load_students(filename = "students.csv")
     CSV.foreach("#{filename}") do |row|
         @students << {name: row[0], cohort: row[1].to_sym}
     end
-    puts @students
 end 
 
 def start_load_students
@@ -101,6 +100,6 @@ def start_load_students
     end
 end 
 
-# nothing will happen till we call the methods
+# method call
 start_load_students
 interactive_menu
